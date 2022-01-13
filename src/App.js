@@ -7,12 +7,16 @@ class App extends Component {
 
     this.state = {
       string: 'Hello World!',
-      monsters: [
-        { name: 'Frankenstein', id: 'asc1' },
-        { name: 'Dracula', id: 'asc2' },
-        { name: 'Zombie', id: 'as1w'}
-      ]
+      monsters: []
+
     }
+  }
+
+  componentDidMount() {
+    // Wenn die Componente das erste mal geladen wird und der State inizialisiert wird
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => this.setState({ monsters: users }));
   }
 
   render() {
@@ -35,7 +39,15 @@ class App extends Component {
       <div className="App" >
         {this.state.monsters.map(monster => {
           // Jedes Element brauch einen Uniq Key damit react sich auf dieses eine Element beim rerendern beziehen kann
-          return (<h1 key={monster.id}>{monster.name}</h1>)
+          return (
+ 
+              <div>
+                <img src="https://placekitten.com/640/360"/>
+                <h2 key={monster.id}>{monster.name}</h2>
+                <h3>{monster.email}</h3>
+              </div>
+            
+          )
         })}
         {/* <header className="App-header">
           
