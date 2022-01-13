@@ -39,7 +39,26 @@ class App extends Component {
     // JSX Attributes - className - onClick - src
     return (
       <div className="App" >
-        <CardList monsters={this.state.monsters}/>
+
+        
+        {this.state.monsters.map(monster => {
+          // Jedes Element brauch einen Uniq Key damit react sich auf dieses eine Element beim rerendern beziehen kann
+          return (
+ 
+              <div>
+                <img src="https://placekitten.com/640/360"/>
+                <h2 key={monster.id}>{monster.name}</h2>
+                <h3>{monster.email}</h3>
+              </div>
+            
+          )
+        })}
+        {/* <header className="App-header">
+          
+          {this.state.string}
+
+          <button onClick={toggle}>Klick mich</button>
+        </header> */}
       </div>
     );
   }

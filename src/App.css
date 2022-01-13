@@ -6,35 +6,3 @@
   font-weight: normal;
 }
 
-.App{
-  width: 40rem;
-  margin: .5rem auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.App div{
-  border: 1px solid #ccc;
-  border-radius: .5rem;
-}
-
-.App img{
-  width: calc(100% - 1rem);
-  margin: .5rem .5rem 0 .5rem;
-  border-radius: .5rem;
-  aspect-ratio: 9/7;
-}
-
-.App h2{
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin: .25rem auto;
-}
-
-.App h3{
-  text-align: center;
-  margin: .25rem auto;
-}
