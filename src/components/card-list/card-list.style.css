@@ -1,8 +1,18 @@
 .card-list{
-  width: 60rem;
+  max-width: 60rem;
+  width: (100% - 2rem);
   margin: .5rem auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1rem;
-  grid-auto-rows: minmax(100px, auto);
+}
+
+.no-cards{
+  width: 100%;
+  margin: .5rem auto;
+
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: rgba(0,0,0,.6);
 }

@@ -1,0 +1,42 @@
+.card-container{
+    background: rgb(255, 255, 255,.7);
+    padding: .5rem 0;
+    transition:  all .25s linear;
+    backdrop-filter: blur(10px);
+
+    border: 1px solid transparent;
+}
+.card-container:hover{
+    transform: scale(1.05);
+
+    border: 1px solid #078581;
+    box-shadow: 0 0 1rem rgba(0,0,0,.4);
+}
+.card-container img{
+    width: calc(100% - 1rem);
+    margin: 0 .5rem;
+    background: #fff;
+}
+
+.card-container h2{
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: .5rem 1rem 0 1rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #076865;
+    text-overflow: ellipsis;
+}
+
+.card-container h2 b{
+    background: orange;
+}
+
+.card-container h3{
+    text-align: center;
+    padding: .5rem;
+    color: #2a9591;
+    font-size: .825rem;
+}

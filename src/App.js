@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { CardList } from './components/card-list/card-list.component';
-
+import { SearchBox } from './components/search-box/search-box.component';
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
       string: 'Hello World!',
-      monsters: []
+      monsters: [],
+      searchField: '',
 
     }
   }
@@ -23,15 +24,21 @@ class App extends Component {
 
   render() {
     // Toggle SET State 
-    const toggle = () => {
-      const newString = 'Bye Bye World';
-      const toggleString = this.state.string !== newString ? newString : 'Hello World!'
+    // const toggle = () => {
+    //   const newString = 'Bye Bye World';
+    //   const toggleString = this.state.string !== newString ? newString : 'Hello World!'
 
-      // BUILDIN FUNTION TO SET STATE 
-      this.setState({
-        string: toggleString
-      });
-    }
+    //   // BUILDIN FUNTION TO SET STATE 
+    //   this.setState({
+    //     string: toggleString
+    //   });
+    // }
+
+    // Filter the Monsters
+    const { monsters, searchField } = this.state;
+    const filterdMonsters = monsters.filter(monster => {
+      return monster.name.toLowerCase().includes(searchField.toLowerCase());
+    })
 
 
 
@@ -39,7 +46,14 @@ class App extends Component {
     // JSX Attributes - className - onClick - src
     return (
       <div className="App" >
-        <CardList monsters={this.state.monsters}/>
+        <h1>Monster Rolodex</h1>
+        <SearchBox
+          placeholder={'suche Monster...'}
+          handleChange={e => this.setState({ searchField: e.target.value })}
+        />
+        <CardList
+          monsters={filterdMonsters}
+        />
       </div>
     );
   }

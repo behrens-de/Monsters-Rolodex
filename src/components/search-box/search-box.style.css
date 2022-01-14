@@ -1,0 +1,21 @@
+.serach-bar{
+    width: 60rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.serach-bar input{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+
+.serach-bar input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
